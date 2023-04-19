@@ -25,35 +25,36 @@ public class Triangle {
 Ex 6.2.2:
 
 public class NumsDaysOfAMonth {
-    private static boolean check(int[] arr, int val) {
-        boolean test = false;
-        for (int element : arr) {
-            if (element == val) {
-                test = true;
-                break;
-            }
+    private static boolean checkLeap(int year) {
+        boolean test = true;
+        if ((year % 100 == 0 && year % 400 != 0) || year % 4 != 0) {
+            test = false;
         }
         return test;
     }
-    private static boolean chekLeap(int year) {
-        boolean test = false;
-        if ((year % 100 == 0 && year % 400 != 0) || year % 4 != 0){
-            test = 
-        }
-        }
-    public static void main(String args[]) {
-        String month;
-        int year;
-        String[] months= {"1","2","3","4","5","6","7","8","9","10","11","12","jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec","january","february","march","april","may","june","july","august","september","october","november","december","jan.","feb.","mar.","apr.","may.","jun.","jul.","aug.","sep.","oct.","nov.","dec."};
-        Scanner input = new Scanner(System.in);
-        while true {
-        month = input.nextInt();
-            if check(months,month) {
-                break;
+    private static convertMonth
+    private static void printAnswer(String month, int year) {
+        int m = 2;
+        if (m % 2 != 0){
+            System.out.println("31");
+        }else if(m != 2){
+            System.out.println("30");
+        }else{
+            if (checkLeap(year)){
+                System.out.println("29");
+            }else{
+                System.out.println("28");
             }
         }
-        year = nextInt();
+    }
+    public static void main(String args[]) {
+        String month = "Jan";
+        int year = 100;
+        String[] months= {"1","2","3","4","5","6","7","8","9","10","11","12","jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec","january","february","march","april","may","june","july","august","september","october","november","december","jan.","feb.","mar.","apr.","may.","jun.","jul.","aug.","sep.","oct.","nov.","dec."};
 
-
+        // boolean contains = Arrays.stream(months).anyMatch(month::equals);
+        printAnswer(month,year);
     }
 }
+
+Ex 6.2.3:
