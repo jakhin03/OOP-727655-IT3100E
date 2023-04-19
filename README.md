@@ -11,6 +11,6 @@
 │   ├── answer.txt      # solution for lab01
 │   ├── README.md
 │   └── src             # source code
-│       ├── ...
+│       └── ...
 └── README.md
 ```
