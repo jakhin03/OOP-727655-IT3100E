@@ -3,11 +3,11 @@
 # 2.2 First Programs:
 2.2.1 Write a "Hello World" program: [solution](./src/HelloWorld.java)
 
-2.2.2 Write a "First Dialog" Java program: [solution](./src/FirstDialog.java)
+2.2.2 Write a "First Dialog" Java application: [solution](./src/FirstDialog.java)
 
-2.2.3 Write a "First Input Dialog" Java program: [solution](./src/HelloNameDialog.java)
+2.2.3 Write a "First Input Dialog" Java application: [solution](./src/HelloNameDialog.java)
 
-2.2.4 Write a "Show Two Numbers" Java program: [solution](./src/ShowTwoNumbers.java)
+2.2.4 Write a "Show Two Numbers" Java application: [solution](./src/ShowTwoNumbers.java)
 
 2.2.5 Write a program to calculate sum, difference, product and quotient of 2 double numbers which are entered by users: [solution](./src/DoubleCalculator.java)
 
