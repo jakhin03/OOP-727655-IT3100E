@@ -8,9 +8,9 @@
 ```
 .
 ├── Lab01
-│   ├── answer.txt  # solution for lab01
+│   ├── answer.txt      # solution for lab01
 │   ├── README.md
-│   └── src         # source code
+│   └── src             # source code
 │       ├── ...
 └── README.md
 ```
