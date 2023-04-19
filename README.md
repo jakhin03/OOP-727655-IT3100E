@@ -8,9 +8,9 @@
 ```
 .
 ├── Lab01
-│   ├── answer.txt
-│   └── src
-│       ├── NumDaysOfMonth.java
-│       └── Triangle.java
+│   ├── answer.txt        # solution for lab01
+│   ├── README.md
+│   └── src     			# source code
+│       ├── ...
 └── README.md
 ```
