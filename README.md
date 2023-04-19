@@ -4,6 +4,8 @@
 * Each folder contains source code and answers.txt file.
 # Environment
 * All solutions are written in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) language.
+# Assignment Submission:
+* Lab 01: [answers.txt](./lab01/answers.txt)
 # Folder structure
 ```
 .
