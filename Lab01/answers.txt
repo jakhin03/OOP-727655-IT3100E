@@ -1,5 +1,73 @@
-Ex 6.2.1:
+Ex 2.2.1:
+```
+public class HelloWorld{
+    public static void main(String[] args){
+        System.out.println("Xin chao \n cac ban!");
+        System.out.println("Hello \t world!");
+    }
+}
+```
 
+Ex 2.2.2:
+```
+import javax.swing.JOptionPane;
+
+public class FirstDialog{
+    public static void main(String[] args){
+        JOptionPane.showMessageDialog(null,"Hello world! How are you?");
+        System.exit(0);
+    }
+}
+```
+
+Ex 2.2.3:
+```
+import javax.swing.JOptionPane;
+public class HelloNameDialog{
+    public static void main(String[] args){
+        String result;
+        result = JOptionPane.showInputDialog("Please enter your name:");
+        JOptionPane.showMessageDialog(null, "Hi " + result + " !");
+        System.exit(0);
+    }
+}
+```
+
+Ex 2.2.4:
+```
+import javax.swing.JOptionPane;
+
+public class ShowTwoNumbers{
+    public static void main(String[] args){
+        String strNum1, strNum2;
+        String strNotification = "You've just entered: ";
+
+        strNum1 = JOptionPane.showInputDialog(null,
+            "Please input the first number: ",
+            "Input the first number",
+            JOptionPane.INFORMATION_MESSAGE);
+        strNotification += strNum1 + " and ";
+
+        strNum2 = JOptionPane.showInputDialog(null,
+            "Please input the second number: ",
+            "Input the second number",
+            JOptionPane.INFORMATION_MESSAGE);
+        strNotification += strNum2;
+
+        JOptionPane.showMessageDialog(null, strNotification,
+            "Show two numbers", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+    }
+}
+```
+
+Ex 2.2.5:
+```
+
+```
+
+Ex 6.2.1:
+```
 public class Triangle {
     public static void main(String[] args) {
         int n;
@@ -21,9 +89,10 @@ public class Triangle {
         }
     }
 }
+```
 
 Ex 6.2.2:
-
+```
 public class NumsDaysOfAMonth {
     private static boolean checkLeap(int year) {
         boolean test = true;
@@ -56,5 +125,8 @@ public class NumsDaysOfAMonth {
         printAnswer(month,year);
     }
 }
+```
 
 Ex 6.2.3:
+```
+```
