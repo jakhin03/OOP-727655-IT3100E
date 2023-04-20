@@ -19,7 +19,7 @@
 # 6 Excercises:
 6.1 Write the "Choosing option" program: [solution](./src/ChoosingOption.java)
 
-6.2 Write a program for input/output keyboard: [solution](./src/IOKeyboard.java)
+6.2 Write a program for input/output keyboard: [solution](./src/InputFromKeyboard.java)
 
 6.2.1 Write a program to display a triangle with a height of n stars (*), n is entered by users: [solution](./src/Triangle.java)
 ```
