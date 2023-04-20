@@ -91,6 +91,7 @@ public class EquationSolver{
 			break;
 		default:
 			System.out.println("Program error!");
+			System.exit(0);
 			break;
 		}
 		
