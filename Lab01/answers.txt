@@ -258,9 +258,26 @@ public class Triangle {
 }
 ```
 
-Ex 6.2.2:
+Ex 6.3:
 ```
+import java.util.*;
+
 public class NumsDaysOfAMonth {
+    public static int findIndex(String arr[], String val)
+    {
+        for (int i=0; i<arr.length; i++){
+            if (arr[i].equals(val)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    private static boolean check(String[] arr, String val) {
+        if (findIndex(arr,val) >= 0){
+            return true;
+        }
+        return false;
+    }    
     private static boolean checkLeap(int year) {
         boolean test = true;
         if ((year % 100 == 0 && year % 400 != 0) || year % 4 != 0) {
@@ -268,32 +285,141 @@ public class NumsDaysOfAMonth {
         }
         return test;
     }
-    private static convertMonth
-    private static void printAnswer(String month, int year) {
-        int m = 2;
-        if (m % 2 != 0){
+    
+    private static int convertMonthToInt(String[] months, String month){
+        return (findIndex(months,month)%12 + 1);
+    }
+    
+    private static void printAnswer(int month, int year) {
+        int m = month;
+        if (m % 2 != 0) {
             System.out.println("31");
-        }else if(m != 2){
+        } else if(m != 2) {
             System.out.println("30");
-        }else{
-            if (checkLeap(year)){
+        } else {
+            if (checkLeap(year)) {
                 System.out.println("29");
-            }else{
+            } else {
                 System.out.println("28");
             }
         }
     }
+    
     public static void main(String args[]) {
-        String month = "Jan";
-        int year = 100;
+        //Scan month and year
+        String strMonth;
+        int year,month;
         String[] months= {"1","2","3","4","5","6","7","8","9","10","11","12","jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec","january","february","march","april","may","june","july","august","september","october","november","december","jan.","feb.","mar.","apr.","may.","jun.","jul.","aug.","sep.","oct.","nov.","dec."};
+        Scanner input = new Scanner(System.in);
 
-        // boolean contains = Arrays.stream(months).anyMatch(month::equals);
+        //input
+        while (true) {
+        System.out.println("Input month: ");
+        strMonth = input.nextLine();
+            if (check(months,strMonth)) {
+                break;
+            }
+        }
+        System.out.println("Input year: ");
+        year = input.nextInt();
+        month = convertMonthToInt(months,strMonth);
+        input.close();
+
+        // print num days of month
         printAnswer(month,year);
     }
 }
 ```
 
-Ex 6.2.3:
+Ex 6.4:
 ```
+import java.util.*;
+
+public class Array{
+    private static void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    private static void arraySort(int[] arr){
+        for (int i=0; i<arr.length; i++){
+            for (int j = 0; j<arr.length; j++){
+                if (arr[i] < arr[j]){
+                    swap(arr,i,j);
+                }
+            }
+        }
+    }
+
+    private static int sumArray(int[] arr){
+        int sum = 0;
+        for (int i=0; i<arr.length; i++){
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    private static double averageArray(int[] arr){
+        return (double)sumArray(arr)/(double)arr.length;
+    }
+
+    public static void main(String[] args) {
+        int n;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input n: ");
+        n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i=0; i<n; i++){
+            System.out.printf("Input array[%d]: ",i);
+            arr[i] = input.nextInt();
+        }
+        arraySort(arr);
+        System.out.printf("Sorted array: %s\nSum of array: %d\nAverage of array: %,.2f", Arrays.toString(arr), sumArray(arr), averageArray(arr));
+    }
+}
+```
+
+Ex 6.5:
+```
+import java.util.*;
+
+public class AddTwoMatrices{
+    public static void main(String[] args) {
+        int m,n;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input size mxn of 2 matrices:\nInput m: ");
+        m = input.nextInt();
+        System.out.print("Input n: ");
+        n = input.nextInt();
+
+        int[][] matrix1 = new int[m][n];
+        int[][] matrix2 = new int[m][n];
+        int[][] matrixSum = new int[m][n];
+        System.out.println("Input 1st array:");
+        for (int i=0; i<m; i++){
+            for (int j=0; j<n; j++){
+                System.out.printf("Input matrix1[%d][%d]: ",i,j);
+                matrix1[i][j] = input.nextInt();
+            }
+        }
+        System.out.println("Input 1st array:");
+        for (int i=0; i<m; i++){
+            for (int j=0; j<n; j++){
+                System.out.printf("Input matrix2[%d][%d]: ",i,j);
+                matrix2[i][j] = input.nextInt();
+            }
+        }
+
+        System.out.println("Sum of two matrices is: ");
+        for (int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                matrixSum[i][j] = matrix1[i][j] + matrix2[i][j];
+                System.out.print(matrixSum[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
 ```

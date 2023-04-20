@@ -1,16 +1,22 @@
+import java.util.*;
+
 public class NumsDaysOfAMonth {
-    private static boolean check(String[] arr, String val) {
-        boolean test = false;
-        for (int element : arr) {
-            if (element == val) {
-                test = true;
-                break;
+    public static int findIndex(String arr[], String val)
+    {
+        for (int i=0; i<arr.length; i++){
+            if (arr[i].equals(val)){
+                return i;
             }
         }
-        return test;
+        return -1;
     }
-    
-    private static boolean chekLeap(int year) {
+    private static boolean check(String[] arr, String val) {
+        if (findIndex(arr,val) >= 0){
+            return true;
+        }
+        return false;
+    }    
+    private static boolean checkLeap(int year) {
         boolean test = true;
         if ((year % 100 == 0 && year % 400 != 0) || year % 4 != 0) {
             test = false;
@@ -19,11 +25,11 @@ public class NumsDaysOfAMonth {
     }
     
     private static int convertMonthToInt(String[] months, String month){
-        return (months.indexOf(month)%12 + 1);
+        return (findIndex(months,month)%12 + 1);
     }
     
-    private static void printAnswer(String month, int year) {
-        int m = 2;
+    private static void printAnswer(int month, int year) {
+        int m = month;
         if (m % 2 != 0) {
             System.out.println("31");
         } else if(m != 2) {
@@ -39,20 +45,25 @@ public class NumsDaysOfAMonth {
     
     public static void main(String args[]) {
         //Scan month and year
-        String month;
-        int year;
+        String strMonth;
+        int year,month;
         String[] months= {"1","2","3","4","5","6","7","8","9","10","11","12","jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec","january","february","march","april","may","june","july","august","september","october","november","december","jan.","feb.","mar.","apr.","may.","jun.","jul.","aug.","sep.","oct.","nov.","dec."};
         Scanner input = new Scanner(System.in);
-        while true {
-        month = input.nextInt();
-            if check(months,month) {
+
+        //input
+        while (true) {
+        System.out.println("Input month: ");
+        strMonth = input.nextLine();
+            if (check(months,strMonth)) {
                 break;
             }
         }
-        year = nextInt();
-        month = convertMonthToInt(months,month);
+        System.out.println("Input year: ");
+        year = input.nextInt();
+        month = convertMonthToInt(months,strMonth);
+        input.close();
 
-        //Print answer
+        // print num days of month
         printAnswer(month,year);
     }
 }
