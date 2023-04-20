@@ -70,6 +70,7 @@ public class EquationSolver{
 		String[] options = {"1", "2", "3", "4"};
 		String title = "Equation Solver";
 		String message = "<html><h2>Choose your equation</h2> 1. Linear equation with one variable<br> 2. Linear equation with two variables<br> 3. Second-degree equation with one variable<br> 4. Quit<br>";
+		while (true){
 		int choice = JOptionPane.showOptionDialog(null, message,
 					title,
 					JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
@@ -86,12 +87,13 @@ public class EquationSolver{
 			break;
 		case 3:
 			JOptionPane.showMessageDialog(null,"Goodbye",title,JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
 			break;
 		default:
 			System.out.println("Program error!");
 			break;
 		}
-		System.exit(0);
-
+		
+	}
 	}
 }
