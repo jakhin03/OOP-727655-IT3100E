@@ -1,3 +1,7 @@
+## release/lab05
+Question: If the passing object is not an instance of Media, what happens ?
+Answer: Is the passing parameter is not an instance of Media, the compiler will yield an error.
+
 ## release/lab04
 Question: If the passing object is not an instance of Media, what happens ?
 Answer: Is the passing parameter is not an instance of Media, the compiler will yield an error.
