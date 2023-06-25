@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.disc;
 
+import java.util.*;
+
 public class DigitalVideoDisc extends Disc {
     private String title;
     private String category;
@@ -60,6 +62,7 @@ public class DigitalVideoDisc extends Disc {
 
         return id;
     }
+
     
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
@@ -67,11 +70,3 @@ public class DigitalVideoDisc extends Disc {
     }
     
 }
-
-
-
-
-
-
-
-    

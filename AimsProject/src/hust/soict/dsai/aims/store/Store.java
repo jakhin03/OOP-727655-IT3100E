@@ -39,7 +39,7 @@ public class Store {
         return itemsInStore;
     }
 
-    public Media search(String title) {
+    public mediaSearch(String title) {
         for (Media media : itemsInStore) {
             if (media.getTitle().equals(title)) {
                 return media;
