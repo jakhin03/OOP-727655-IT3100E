@@ -1,7 +1,10 @@
 package hust.soict.dsai.aims.screen;
 
+import hust.soict.dsai.aims.media.*;
+import hust.soict.dsai.aims.store.*;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class StoreScreen extends JFrame{
 	private Store store;
@@ -15,20 +18,20 @@ public class StoreScreen extends JFrame{
 		cp.add(createCenter(), BorderLayout.CENTER);
 
 		setVisible(true);
-		setTitle(true);
+		setTitle("Store");
 		setSize(1024, 768);
 	}
 
 	JPanel createNorth(){
-		Jpanel north = new Jpanel();
-		north.setLayout(new BoxLayout(north, Y_AXIS, BoxLayout.Y_AXIS));
+		JPanel north = new JPanel();
+		north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
 		north.add(createMenuBar());
 		return north;
 	}
 
 	JMenuBar createMenuBar(){
 
-		JMenu = new JMenu("Options");
+		JMenu menu = new JMenu("Options");
 
 		JMenu smUpdateStore = new JMenu("Update Store");
 		smUpdateStore.add(new JMenuItem("Add Book"));

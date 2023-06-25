@@ -2,6 +2,7 @@ package hust.soict.dsai.aims.screen;
 
 import javax.swing.*;
 import java.awt.*;
+import hust.soict.dsai.aims.media.*;
 
 public class MediaStore extends JPanel{
 	private Media media;
@@ -12,11 +13,7 @@ public class MediaStore extends JPanel{
 
 		JLabel title = new JLabel(media.getTitle());
 		title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 20));
-		title.setAlignment(CENTER_ALIGNMENT);
-
-
-		JLabel cost = new JLabel(""+media.getCost()+" $");
-		cost.setAlignmentX(CENTER_ALIGNMENT);
+		title.setAlignmentX(CENTER_ALIGNMENT);
 
 		JLabel cost = new JLabel(""+media.getCost()+" $");
 		cost.setAlignmentX(CENTER_ALIGNMENT);
