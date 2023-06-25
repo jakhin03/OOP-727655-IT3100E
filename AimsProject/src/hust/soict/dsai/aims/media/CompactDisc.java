@@ -1,6 +1,8 @@
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
+import hust.soict.dsai.aims.disc.*;
+
 public class CompactDisc extends Disc implements Playable{
     private String artist;
     private ArrayList<Track> tracks;
@@ -27,7 +29,7 @@ public class CompactDisc extends Disc implements Playable{
             System.out.println("The track was not found in the CD.");
         }
     }
-
+    
     public int getLength() {
         int totalLength = 0;
         for (Track track : tracks) {
@@ -35,6 +37,7 @@ public class CompactDisc extends Disc implements Playable{
         }
         return totalLength;
     }
+    
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
         System.out.println("CD length: " + this.getLength());

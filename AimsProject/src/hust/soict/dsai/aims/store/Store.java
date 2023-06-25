@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.store;
 
+import hust.soict.dsai.aims.media.*;
 import java.util.ArrayList;
 
 public class Store {
@@ -39,7 +40,7 @@ public class Store {
         return itemsInStore;
     }
 
-    public mediaSearch(String title) {
+    public Media mediaSearch(String title) {
         for (Media media : itemsInStore) {
             if (media.getTitle().equals(title)) {
                 return media;
