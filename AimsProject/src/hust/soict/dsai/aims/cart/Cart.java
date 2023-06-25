@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.cart;
+
 import java.util.ArrayList;
 
 public class Cart {

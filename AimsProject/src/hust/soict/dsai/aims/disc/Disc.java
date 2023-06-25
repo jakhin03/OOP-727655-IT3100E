@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.disc;
+
 public class Disc extends Media{
     private int length;
     private String director;

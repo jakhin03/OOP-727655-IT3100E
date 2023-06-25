@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims;
+
 import java.util.Scanner;
 
 public class Aims {
