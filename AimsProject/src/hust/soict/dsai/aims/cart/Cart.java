@@ -6,6 +6,7 @@ public class Cart {
     public int getQtyOrdered() {
         return qtyOrdered;
     }
+
     public void addDigitalVideoDisc(DigitalVideoDisc disc){
         if (this.qtyOrdered == MAX_NUMBERS_ORDERED){
             System.out.println("The cart is almost full");
@@ -22,27 +23,31 @@ public class Cart {
             }
         }
     }
+    
     public void removeDigitalVideoDisc(DigitalVideoDisc disc){
         if (this.qtyOrdered == 0){
-            System.out.println("Your cart is empty");;
+            System.out.println("Your cart is empty");
         }
         else{
             int i;
             for (i=0;i<MAX_NUMBERS_ORDERED;i++){
-                if (this.itemsOrdered[i].equals(disc)){
+                if (this.itemsOrdered[i] != null && this.itemsOrdered[i].equals(disc)){
                     this.itemsOrdered[i] = null;
                     this.qtyOrdered -= 1;
                     System.out.println("The disc has been removed");
                     break;
                 }
             }
+
+            if (i == MAX_NUMBERS_ORDERED){
+                System.out.println("The disc is not in the cart");
+            }
         }
     }
+    
     public float totalCost(){
         float res = 0;
-        int i;
-        for (i=0;i<this.itemsOrdered.length;i++){
-
+        for (int i = 0; i < MAX_NUMBERS_ORDERED; i++){
             if (this.itemsOrdered[i] != null){
                 res += this.itemsOrdered[i].getCost();
             }
@@ -50,6 +55,20 @@ public class Cart {
         return res;
     }
     
-    
 
+    public void print() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
+            if (this.itemsOrdered[i] != null) {
+                System.out.println((i+1) + ". " + this.itemsOrdered[i].toString());
+            }
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("***************************************************");
+    }
+    public DigitalVideoDisc[] getItemsOrdered() {
+        return itemsOrdered;
+    }
 }
+
