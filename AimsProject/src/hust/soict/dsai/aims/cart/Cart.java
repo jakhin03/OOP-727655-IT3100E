@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.cart;
 
+
 import java.util.ArrayList;
 
 public class Cart {
@@ -36,6 +37,7 @@ public class Cart {
         System.out.println("Ordered Items:");
         for (int i = 0; i < this.itemsOrdered.size(); i++) {
             System.out.println((i + 1) + ". " + this.itemsOrdered.get(i).toString());
+
         }
         System.out.println("Total cost: " + totalCost());
         System.out.println("***************************************************");
