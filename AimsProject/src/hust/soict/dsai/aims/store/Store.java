@@ -1,3 +1,7 @@
+package hust.soict.dsai.aims.store;
+
+import java.util.*;
+
 public class Store {
     private DigitalVideoDisc[] itemsInStore;
     private int currentIndex;

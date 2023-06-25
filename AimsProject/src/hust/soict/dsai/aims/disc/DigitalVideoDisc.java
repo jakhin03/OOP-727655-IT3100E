@@ -1,3 +1,7 @@
+package hust.soict.dsai.aims.disc;
+
+import java.util.*;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
