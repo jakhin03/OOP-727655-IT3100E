@@ -1,5 +1,11 @@
 package hust.soict.dsai.aims;
 
+import hust.soict.dsai.aims.cart.*;
+import hust.soict.dsai.aims.disc.*;
+import hust.soict.dsai.aims.media.*;
+import hust.soict.dsai.aims.store.*;
+import hust.soict.dsai.aims.screen.*;
+
 import java.util.Scanner;
 
 public class Aims {
@@ -89,7 +95,7 @@ public class Aims {
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
 
-        Media media = store.search(title);
+        Media media = store.mediaSearch(title);
         if (media != null) {
             System.out.println(media.toString());
             mediaDetailsMenu(media);
@@ -140,7 +146,7 @@ public class Aims {
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
 
-        Media media = store.search(title);
+        Media media = store.mediaSearch(title);
         if (media != null) {
             cart.addMedia(media);
             System.out.println("The media has been added to the cart.");
@@ -155,7 +161,7 @@ public class Aims {
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
 
-        Media media = store.search(title);
+        Media media = store.mediaSearch(title);
         if (media != null && media instanceof Playable) {
             ((Playable) media).play();
         } else {
