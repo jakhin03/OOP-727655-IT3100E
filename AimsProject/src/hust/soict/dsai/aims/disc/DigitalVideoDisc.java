@@ -38,6 +38,7 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+
         nbDigitalVideoDiscs ++;
         id = nbDigitalVideoDiscs;
     }
@@ -77,11 +78,3 @@ public class DigitalVideoDisc {
     }
     
 }
-
-
-
-
-
-
-
-    

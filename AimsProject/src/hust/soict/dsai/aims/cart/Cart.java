@@ -6,7 +6,7 @@ public class Cart {
     public int getQtyOrdered() {
         return qtyOrdered;
     }
-    
+
     public void addDigitalVideoDisc(DigitalVideoDisc disc){
         if (this.qtyOrdered == MAX_NUMBERS_ORDERED){
             System.out.println("The cart is almost full");
@@ -38,6 +38,7 @@ public class Cart {
                     break;
                 }
             }
+
             if (i == MAX_NUMBERS_ORDERED){
                 System.out.println("The disc is not in the cart");
             }
@@ -54,6 +55,7 @@ public class Cart {
         return res;
     }
     
+
     public void print() {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered Items:");
@@ -69,3 +71,4 @@ public class Cart {
         return itemsOrdered;
     }
 }
+
