@@ -2,7 +2,7 @@ package hust.soict.dsai.aims.disc;
 
 import java.util.*;
 
-public class DigitalVideoDisc {
+public class DigitalVideoDisc extends Disc {
     private String title;
     private String category;
     private String director;
@@ -42,7 +42,6 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
-
         nbDigitalVideoDiscs ++;
         id = nbDigitalVideoDiscs;
     }
@@ -63,22 +62,11 @@ public class DigitalVideoDisc {
 
         return id;
     }
-    public static DigitalVideoDisc searchById(Cart cart, int id) {
-        for (DigitalVideoDisc disc : cart.getItemsOrdered()) {
-            if (disc.getId() == id) {
-                return disc;
-            }
-        }
-        return null;
-    }
+
     
-    public static DigitalVideoDisc searchByTitle(Cart cart, String title) {
-        for (DigitalVideoDisc disc : cart.getItemsOrdered()) {
-            if (disc.isMatch(title)) {
-                return disc;
-            }
-        }
-        return null;
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
     
 }
