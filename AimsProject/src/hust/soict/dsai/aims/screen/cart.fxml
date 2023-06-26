@@ -58,7 +58,7 @@
                </padding>
                <children>
                   <Label text="Filter" />
-                  <TextField />
+                  <TextField fx:id="tfFilter" />
                   <RadioButton mnemonicParsing="false" selected="true" text="By ID">
                      <toggleGroup>
                         <ToggleGroup fx:id="filterCategory" />

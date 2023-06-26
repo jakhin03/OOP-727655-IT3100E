@@ -10,18 +10,24 @@ import javafx.event.*;
 
 public class PainterController {
 	
-	@FXML
-	private Pane drawingAreaPane;
+	@FXML private Pane drawingAreaPane;
+	@FXML private Pane drawingArea;
+	private DrawingTool currentTool = DrawingTool.PEN;
     
 	@FXML
 	public void drawingAreaMouseDragged(MouseEvent event) {
-		Circle newCircle = new Circle(event.getX(), event.getY(), 4, Color.BLACK);
-		drawingAreaPane.getChildren().add(newCircle);
+		int penSize;
+		Color penColor;
 	    if (currentTool == DrawingTool.PEN) {
-	        newCircle = new Circle(event.getX(), event.getY(), 4, Color.BLACK);
+	        penSize = 4;
+	        penColor = Color.BLACK;
 	    } else { // eraser tool selected
-	        newCircle = new Circle(event.getX(), event.getY(), 4, Color.WHITE);
+	        penSize = 10;
+	        penColor = Color.WHITE;
 	    }	
+		Circle newCircle = new Circle(event.getX(), event.getY(), penSize, penColor);
+		drawingAreaPane.getChildren().add(newCircle);
+
 	}
 	
 	@FXML
@@ -31,13 +37,10 @@ public class PainterController {
 		}
 	}
 	
-	//add erase feature
 	public enum DrawingTool {
 	    PEN,
 	    ERASER
 	}
-
-	private DrawingTool currentTool = DrawingTool.PEN;
 	
 	@FXML
 	private void handleEraserSelected() {
