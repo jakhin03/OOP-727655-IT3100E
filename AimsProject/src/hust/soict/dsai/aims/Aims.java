@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.cart.*;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.*;
 
@@ -125,7 +126,12 @@ public class Aims {
                 break;
             case 2:
                 if (media instanceof Playable) {
-                    ((Playable) media).play();
+                    try {
+						((Playable) media).play();
+					} catch (PlayerException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                 } else {
                     System.out.println("Invalid choice. Please try again.");
                     mediaDetailsMenu(media);
@@ -161,7 +167,12 @@ public class Aims {
 
         Media media = store.mediaSearch(title);
         if (media != null && media instanceof Playable) {
-            ((Playable) media).play();
+            try {
+				((Playable) media).play();
+			} catch (PlayerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else {
             System.out.println("Media not found or is not playable.");
         }
@@ -300,7 +311,12 @@ public class Aims {
 
         Media media = cart.search(title);
         if (media != null && media instanceof Playable) {
-            ((Playable) media).play();
+            try {
+				((Playable) media).play();
+			} catch (PlayerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else {
             System.out.println("Media not found or is not playable.");
         }

@@ -55,12 +55,27 @@ public class CartScreenController {
 				}
 				});
 		
-//		tfFilter.textProperty().addListener(new ChangeListener<String>() {
-//			@Override
-//			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-//				showFilteredMedia(newValue);
-//			}
-//		});
+		FilteredList<Media> filteredList = new FilteredList<>(tblMedia.getItems(), p -> true);
+		
+	    tfFilter.textProperty().addListener((observable, oldValue, newValue) -> {
+	        filteredList.setPredicate(media -> {
+	            if (newValue == null || newValue.isEmpty()) {
+	                return true;
+	            }
+	            
+	            String lowerCaseFilter = newValue.toLowerCase();
+	            if (radioBtnFilterTitle.isSelected()) {
+	                return media.getTitle().toLowerCase().contains(lowerCaseFilter);
+	            } else if (radioBtnFilterId.isSelected()) {
+	                return Integer.toString(media.getId()).contains(lowerCaseFilter);
+	            }
+	            
+	            return true;
+	        });
+	    });
+	    
+	    // Set the filtered items to be displayed in the table
+	    tblMedia.setItems(filteredList);
 	}
 	
 	void updateButtonBar(Media media) {
@@ -76,10 +91,5 @@ public class CartScreenController {
 	void btnRemovePressed(ActionEvent event) {
 		Media media = tblMedia.getSelectionModel().getSelectedItem();
 		cart.removeMedia(media);
-	}
-	
-	@FXML
-	void showFilteredMedia(String newValue) {
-		
 	}
 }
