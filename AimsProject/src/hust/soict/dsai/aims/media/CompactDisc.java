@@ -23,7 +23,12 @@ public class CompactDisc extends Disc implements Playable{
         }
     }
 
-    public void removeTrack(Track track) {
+    public CompactDisc(String artist, ArrayList<Track> tracks) {
+		super();
+		this.artist = artist;
+		this.tracks = tracks;
+	}
+	public void removeTrack(Track track) {
         if (tracks.remove(track)) {
             System.out.println("The track has been removed from the CD.");
         } else {
