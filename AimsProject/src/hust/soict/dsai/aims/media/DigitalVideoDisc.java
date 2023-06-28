@@ -4,7 +4,7 @@ import java.util.*;
 
 import hust.soict.dsai.aims.exception.PlayerException;
 
-public class DigitalVideoDisc extends Disc {
+public class DigitalVideoDisc extends Disc implements Playable{
     private String title;
     private String category;
     private String director;

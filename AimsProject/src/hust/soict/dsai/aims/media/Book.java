@@ -21,7 +21,13 @@ public class Book extends Media{
             System.out.println("Author added successfully");
         }
     }
-    public void removeAuthor (String authorName){
+    public Book(List<String> authors) {
+		super();
+		this.authors = authors;
+	}
+
+
+	public void removeAuthor (String authorName){
         if (authors.contains(authorName)){
             authors.remove(authorName);
             System.out.println("Author removed successfully");
